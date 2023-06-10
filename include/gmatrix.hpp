@@ -14,8 +14,8 @@ template <typename T>
 class indexer {
 private:
     std::vector<size_t>* shape;
-    T** data;
     std::vector<size_t> indices;
+    T** data;
 public:
     indexer(std::vector<size_t>* shape, T** data) {
         this->shape = shape;
@@ -39,6 +39,17 @@ public:
         }
         this->indices.push_back(idx);
         return *this;
+    }
+
+    T& flat(size_t idx) {
+        size_t size = 1;
+        for (auto s : *shape) {
+            size *= s;
+        }
+        if (idx >= size) {
+            throw std::out_of_range("Index out of boundaries.");
+        }
+        return (*this->data)[idx];
     }
 
     void clear() {
@@ -76,14 +87,30 @@ public:
     void operator = (T value) {
         (T&) (*this) = value;
     }
+
+    std::string to_string() {
+        if (indices.size() == shape->size()) {
+            return std::to_string((T&) (*this)) + (*indices.rbegin() != (*shape)[indices.size() - 1] - 1 ? ", " : "");
+        } else {
+            std::string result = "[ ";
+            for (size_t i = 0; i < (*shape)[indices.size()]; i++) {
+                result += (*this)[i].to_string();
+                erase_last();
+            }
+            result += " ]\n";
+            return result;
+        }
+    }
 };
+
+
 
 /**
  * Generalized matrix implementation (can be used for vectors, matrices and tensors).
 */
 template <typename T>
 class gmatrix {
-private:
+protected:
     std::vector<size_t> _shape;
     size_t size;
 public:
@@ -232,8 +259,31 @@ public:
         return indexer<T>(&this->_shape, &this->data, idx);
     }
 
+    indexer<T> get_indexer () {
+        return indexer<T>(&this->_shape, &this->data);
+    }
+
     friend class indexer<T>;
 };
+
+// Operator overloading
+template <typename T>
+std::ostream &operator<<(std::ostream &os, gmatrix<T> &m) { 
+    auto shape = m.shape();
+    os << "[ ";
+    for (size_t i = 0; i < shape[0]; i++) {
+        os << m[i].to_string() << (i != shape[0] - 1 ? ", " : "");
+    }
+    os << " ]";
+    return os;
+    // os << "[";
+    // for (size_t i = 0; i < m.size; i++) {
+    //     os << m.data[i];
+    //     if (i != m.size - 1) os << ", ";
+    // }
+    // os << "]";
+    return os;
+}
 
 }
 
