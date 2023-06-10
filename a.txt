@@ -1,0 +1,2268 @@
+Result shape: 6 3 6 3 Multipliers: 54 18 3 1 idx: 0
+INDICES: 0 
+0 
+0 
+0 
+OK
+idx: 1
+INDICES: 0 
+0 
+0 
+1 
+OK
+idx: 2
+INDICES: 0 
+0 
+0 
+2 
+OK
+idx: 3
+INDICES: 0 
+0 
+1 
+0 
+OK
+idx: 4
+INDICES: 0 
+0 
+1 
+1 
+OK
+idx: 5
+INDICES: 0 
+0 
+1 
+2 
+OK
+idx: 6
+INDICES: 0 
+0 
+2 
+0 
+OK
+idx: 7
+INDICES: 0 
+0 
+2 
+1 
+OK
+idx: 8
+INDICES: 0 
+0 
+2 
+2 
+OK
+idx: 9
+INDICES: 0 
+0 
+3 
+0 
+OK
+idx: 10
+INDICES: 0 
+0 
+3 
+1 
+OK
+idx: 11
+INDICES: 0 
+0 
+3 
+2 
+OK
+idx: 12
+INDICES: 0 
+0 
+4 
+0 
+OK
+idx: 13
+INDICES: 0 
+0 
+4 
+1 
+OK
+idx: 14
+INDICES: 0 
+0 
+4 
+2 
+OK
+idx: 15
+INDICES: 0 
+0 
+5 
+0 
+OK
+idx: 16
+INDICES: 0 
+0 
+5 
+1 
+OK
+idx: 17
+INDICES: 0 
+0 
+5 
+2 
+OK
+idx: 18
+INDICES: 0 
+1 
+0 
+0 
+OK
+idx: 19
+INDICES: 0 
+1 
+0 
+1 
+OK
+idx: 20
+INDICES: 0 
+1 
+0 
+2 
+OK
+idx: 21
+INDICES: 0 
+1 
+1 
+0 
+OK
+idx: 22
+INDICES: 0 
+1 
+1 
+1 
+OK
+idx: 23
+INDICES: 0 
+1 
+1 
+2 
+OK
+idx: 24
+INDICES: 0 
+1 
+2 
+0 
+OK
+idx: 25
+INDICES: 0 
+1 
+2 
+1 
+OK
+idx: 26
+INDICES: 0 
+1 
+2 
+2 
+OK
+idx: 27
+INDICES: 0 
+1 
+3 
+0 
+OK
+idx: 28
+INDICES: 0 
+1 
+3 
+1 
+OK
+idx: 29
+INDICES: 0 
+1 
+3 
+2 
+OK
+idx: 30
+INDICES: 0 
+1 
+4 
+0 
+OK
+idx: 31
+INDICES: 0 
+1 
+4 
+1 
+OK
+idx: 32
+INDICES: 0 
+1 
+4 
+2 
+OK
+idx: 33
+INDICES: 0 
+1 
+5 
+0 
+OK
+idx: 34
+INDICES: 0 
+1 
+5 
+1 
+OK
+idx: 35
+INDICES: 0 
+1 
+5 
+2 
+OK
+idx: 36
+INDICES: 0 
+2 
+0 
+0 
+OK
+idx: 37
+INDICES: 0 
+2 
+0 
+1 
+OK
+idx: 38
+INDICES: 0 
+2 
+0 
+2 
+OK
+idx: 39
+INDICES: 0 
+2 
+1 
+0 
+OK
+idx: 40
+INDICES: 0 
+2 
+1 
+1 
+OK
+idx: 41
+INDICES: 0 
+2 
+1 
+2 
+OK
+idx: 42
+INDICES: 0 
+2 
+2 
+0 
+OK
+idx: 43
+INDICES: 0 
+2 
+2 
+1 
+OK
+idx: 44
+INDICES: 0 
+2 
+2 
+2 
+OK
+idx: 45
+INDICES: 0 
+2 
+3 
+0 
+OK
+idx: 46
+INDICES: 0 
+2 
+3 
+1 
+OK
+idx: 47
+INDICES: 0 
+2 
+3 
+2 
+OK
+idx: 48
+INDICES: 0 
+2 
+4 
+0 
+OK
+idx: 49
+INDICES: 0 
+2 
+4 
+1 
+OK
+idx: 50
+INDICES: 0 
+2 
+4 
+2 
+OK
+idx: 51
+INDICES: 0 
+2 
+5 
+0 
+OK
+idx: 52
+INDICES: 0 
+2 
+5 
+1 
+OK
+idx: 53
+INDICES: 0 
+2 
+5 
+2 
+OK
+idx: 54
+INDICES: 1 
+0 
+0 
+0 
+OK
+idx: 55
+INDICES: 1 
+0 
+0 
+1 
+OK
+idx: 56
+INDICES: 1 
+0 
+0 
+2 
+OK
+idx: 57
+INDICES: 1 
+0 
+1 
+0 
+OK
+idx: 58
+INDICES: 1 
+0 
+1 
+1 
+OK
+idx: 59
+INDICES: 1 
+0 
+1 
+2 
+OK
+idx: 60
+INDICES: 1 
+0 
+2 
+0 
+OK
+idx: 61
+INDICES: 1 
+0 
+2 
+1 
+OK
+idx: 62
+INDICES: 1 
+0 
+2 
+2 
+OK
+idx: 63
+INDICES: 1 
+0 
+3 
+0 
+OK
+idx: 64
+INDICES: 1 
+0 
+3 
+1 
+OK
+idx: 65
+INDICES: 1 
+0 
+3 
+2 
+OK
+idx: 66
+INDICES: 1 
+0 
+4 
+0 
+OK
+idx: 67
+INDICES: 1 
+0 
+4 
+1 
+OK
+idx: 68
+INDICES: 1 
+0 
+4 
+2 
+OK
+idx: 69
+INDICES: 1 
+0 
+5 
+0 
+OK
+idx: 70
+INDICES: 1 
+0 
+5 
+1 
+OK
+idx: 71
+INDICES: 1 
+0 
+5 
+2 
+OK
+idx: 72
+INDICES: 1 
+1 
+0 
+0 
+OK
+idx: 73
+INDICES: 1 
+1 
+0 
+1 
+OK
+idx: 74
+INDICES: 1 
+1 
+0 
+2 
+OK
+idx: 75
+INDICES: 1 
+1 
+1 
+0 
+OK
+idx: 76
+INDICES: 1 
+1 
+1 
+1 
+OK
+idx: 77
+INDICES: 1 
+1 
+1 
+2 
+OK
+idx: 78
+INDICES: 1 
+1 
+2 
+0 
+OK
+idx: 79
+INDICES: 1 
+1 
+2 
+1 
+OK
+idx: 80
+INDICES: 1 
+1 
+2 
+2 
+OK
+idx: 81
+INDICES: 1 
+1 
+3 
+0 
+OK
+idx: 82
+INDICES: 1 
+1 
+3 
+1 
+OK
+idx: 83
+INDICES: 1 
+1 
+3 
+2 
+OK
+idx: 84
+INDICES: 1 
+1 
+4 
+0 
+OK
+idx: 85
+INDICES: 1 
+1 
+4 
+1 
+OK
+idx: 86
+INDICES: 1 
+1 
+4 
+2 
+OK
+idx: 87
+INDICES: 1 
+1 
+5 
+0 
+OK
+idx: 88
+INDICES: 1 
+1 
+5 
+1 
+OK
+idx: 89
+INDICES: 1 
+1 
+5 
+2 
+OK
+idx: 90
+INDICES: 1 
+2 
+0 
+0 
+OK
+idx: 91
+INDICES: 1 
+2 
+0 
+1 
+OK
+idx: 92
+INDICES: 1 
+2 
+0 
+2 
+OK
+idx: 93
+INDICES: 1 
+2 
+1 
+0 
+OK
+idx: 94
+INDICES: 1 
+2 
+1 
+1 
+OK
+idx: 95
+INDICES: 1 
+2 
+1 
+2 
+OK
+idx: 96
+INDICES: 1 
+2 
+2 
+0 
+OK
+idx: 97
+INDICES: 1 
+2 
+2 
+1 
+OK
+idx: 98
+INDICES: 1 
+2 
+2 
+2 
+OK
+idx: 99
+INDICES: 1 
+2 
+3 
+0 
+OK
+idx: 100
+INDICES: 1 
+2 
+3 
+1 
+OK
+idx: 101
+INDICES: 1 
+2 
+3 
+2 
+OK
+idx: 102
+INDICES: 1 
+2 
+4 
+0 
+OK
+idx: 103
+INDICES: 1 
+2 
+4 
+1 
+OK
+idx: 104
+INDICES: 1 
+2 
+4 
+2 
+OK
+idx: 105
+INDICES: 1 
+2 
+5 
+0 
+OK
+idx: 106
+INDICES: 1 
+2 
+5 
+1 
+OK
+idx: 107
+INDICES: 1 
+2 
+5 
+2 
+OK
+idx: 108
+INDICES: 2 
+0 
+0 
+0 
+OK
+idx: 109
+INDICES: 2 
+0 
+0 
+1 
+OK
+idx: 110
+INDICES: 2 
+0 
+0 
+2 
+OK
+idx: 111
+INDICES: 2 
+0 
+1 
+0 
+OK
+idx: 112
+INDICES: 2 
+0 
+1 
+1 
+OK
+idx: 113
+INDICES: 2 
+0 
+1 
+2 
+OK
+idx: 114
+INDICES: 2 
+0 
+2 
+0 
+OK
+idx: 115
+INDICES: 2 
+0 
+2 
+1 
+OK
+idx: 116
+INDICES: 2 
+0 
+2 
+2 
+OK
+idx: 117
+INDICES: 2 
+0 
+3 
+0 
+OK
+idx: 118
+INDICES: 2 
+0 
+3 
+1 
+OK
+idx: 119
+INDICES: 2 
+0 
+3 
+2 
+OK
+idx: 120
+INDICES: 2 
+0 
+4 
+0 
+OK
+idx: 121
+INDICES: 2 
+0 
+4 
+1 
+OK
+idx: 122
+INDICES: 2 
+0 
+4 
+2 
+OK
+idx: 123
+INDICES: 2 
+0 
+5 
+0 
+OK
+idx: 124
+INDICES: 2 
+0 
+5 
+1 
+OK
+idx: 125
+INDICES: 2 
+0 
+5 
+2 
+OK
+idx: 126
+INDICES: 2 
+1 
+0 
+0 
+OK
+idx: 127
+INDICES: 2 
+1 
+0 
+1 
+OK
+idx: 128
+INDICES: 2 
+1 
+0 
+2 
+OK
+idx: 129
+INDICES: 2 
+1 
+1 
+0 
+OK
+idx: 130
+INDICES: 2 
+1 
+1 
+1 
+OK
+idx: 131
+INDICES: 2 
+1 
+1 
+2 
+OK
+idx: 132
+INDICES: 2 
+1 
+2 
+0 
+OK
+idx: 133
+INDICES: 2 
+1 
+2 
+1 
+OK
+idx: 134
+INDICES: 2 
+1 
+2 
+2 
+OK
+idx: 135
+INDICES: 2 
+1 
+3 
+0 
+OK
+idx: 136
+INDICES: 2 
+1 
+3 
+1 
+OK
+idx: 137
+INDICES: 2 
+1 
+3 
+2 
+OK
+idx: 138
+INDICES: 2 
+1 
+4 
+0 
+OK
+idx: 139
+INDICES: 2 
+1 
+4 
+1 
+OK
+idx: 140
+INDICES: 2 
+1 
+4 
+2 
+OK
+idx: 141
+INDICES: 2 
+1 
+5 
+0 
+OK
+idx: 142
+INDICES: 2 
+1 
+5 
+1 
+OK
+idx: 143
+INDICES: 2 
+1 
+5 
+2 
+OK
+idx: 144
+INDICES: 2 
+2 
+0 
+0 
+OK
+idx: 145
+INDICES: 2 
+2 
+0 
+1 
+OK
+idx: 146
+INDICES: 2 
+2 
+0 
+2 
+OK
+idx: 147
+INDICES: 2 
+2 
+1 
+0 
+OK
+idx: 148
+INDICES: 2 
+2 
+1 
+1 
+OK
+idx: 149
+INDICES: 2 
+2 
+1 
+2 
+OK
+idx: 150
+INDICES: 2 
+2 
+2 
+0 
+OK
+idx: 151
+INDICES: 2 
+2 
+2 
+1 
+OK
+idx: 152
+INDICES: 2 
+2 
+2 
+2 
+OK
+idx: 153
+INDICES: 2 
+2 
+3 
+0 
+OK
+idx: 154
+INDICES: 2 
+2 
+3 
+1 
+OK
+idx: 155
+INDICES: 2 
+2 
+3 
+2 
+OK
+idx: 156
+INDICES: 2 
+2 
+4 
+0 
+OK
+idx: 157
+INDICES: 2 
+2 
+4 
+1 
+OK
+idx: 158
+INDICES: 2 
+2 
+4 
+2 
+OK
+idx: 159
+INDICES: 2 
+2 
+5 
+0 
+OK
+idx: 160
+INDICES: 2 
+2 
+5 
+1 
+OK
+idx: 161
+INDICES: 2 
+2 
+5 
+2 
+OK
+idx: 162
+INDICES: 3 
+0 
+0 
+0 
+OK
+idx: 163
+INDICES: 3 
+0 
+0 
+1 
+OK
+idx: 164
+INDICES: 3 
+0 
+0 
+2 
+OK
+idx: 165
+INDICES: 3 
+0 
+1 
+0 
+OK
+idx: 166
+INDICES: 3 
+0 
+1 
+1 
+OK
+idx: 167
+INDICES: 3 
+0 
+1 
+2 
+OK
+idx: 168
+INDICES: 3 
+0 
+2 
+0 
+OK
+idx: 169
+INDICES: 3 
+0 
+2 
+1 
+OK
+idx: 170
+INDICES: 3 
+0 
+2 
+2 
+OK
+idx: 171
+INDICES: 3 
+0 
+3 
+0 
+OK
+idx: 172
+INDICES: 3 
+0 
+3 
+1 
+OK
+idx: 173
+INDICES: 3 
+0 
+3 
+2 
+OK
+idx: 174
+INDICES: 3 
+0 
+4 
+0 
+OK
+idx: 175
+INDICES: 3 
+0 
+4 
+1 
+OK
+idx: 176
+INDICES: 3 
+0 
+4 
+2 
+OK
+idx: 177
+INDICES: 3 
+0 
+5 
+0 
+OK
+idx: 178
+INDICES: 3 
+0 
+5 
+1 
+OK
+idx: 179
+INDICES: 3 
+0 
+5 
+2 
+OK
+idx: 180
+INDICES: 3 
+1 
+0 
+0 
+OK
+idx: 181
+INDICES: 3 
+1 
+0 
+1 
+OK
+idx: 182
+INDICES: 3 
+1 
+0 
+2 
+OK
+idx: 183
+INDICES: 3 
+1 
+1 
+0 
+OK
+idx: 184
+INDICES: 3 
+1 
+1 
+1 
+OK
+idx: 185
+INDICES: 3 
+1 
+1 
+2 
+OK
+idx: 186
+INDICES: 3 
+1 
+2 
+0 
+OK
+idx: 187
+INDICES: 3 
+1 
+2 
+1 
+OK
+idx: 188
+INDICES: 3 
+1 
+2 
+2 
+OK
+idx: 189
+INDICES: 3 
+1 
+3 
+0 
+OK
+idx: 190
+INDICES: 3 
+1 
+3 
+1 
+OK
+idx: 191
+INDICES: 3 
+1 
+3 
+2 
+OK
+idx: 192
+INDICES: 3 
+1 
+4 
+0 
+OK
+idx: 193
+INDICES: 3 
+1 
+4 
+1 
+OK
+idx: 194
+INDICES: 3 
+1 
+4 
+2 
+OK
+idx: 195
+INDICES: 3 
+1 
+5 
+0 
+OK
+idx: 196
+INDICES: 3 
+1 
+5 
+1 
+OK
+idx: 197
+INDICES: 3 
+1 
+5 
+2 
+OK
+idx: 198
+INDICES: 3 
+2 
+0 
+0 
+OK
+idx: 199
+INDICES: 3 
+2 
+0 
+1 
+OK
+idx: 200
+INDICES: 3 
+2 
+0 
+2 
+OK
+idx: 201
+INDICES: 3 
+2 
+1 
+0 
+OK
+idx: 202
+INDICES: 3 
+2 
+1 
+1 
+OK
+idx: 203
+INDICES: 3 
+2 
+1 
+2 
+OK
+idx: 204
+INDICES: 3 
+2 
+2 
+0 
+OK
+idx: 205
+INDICES: 3 
+2 
+2 
+1 
+OK
+idx: 206
+INDICES: 3 
+2 
+2 
+2 
+OK
+idx: 207
+INDICES: 3 
+2 
+3 
+0 
+OK
+idx: 208
+INDICES: 3 
+2 
+3 
+1 
+OK
+idx: 209
+INDICES: 3 
+2 
+3 
+2 
+OK
+idx: 210
+INDICES: 3 
+2 
+4 
+0 
+OK
+idx: 211
+INDICES: 3 
+2 
+4 
+1 
+OK
+idx: 212
+INDICES: 3 
+2 
+4 
+2 
+OK
+idx: 213
+INDICES: 3 
+2 
+5 
+0 
+OK
+idx: 214
+INDICES: 3 
+2 
+5 
+1 
+OK
+idx: 215
+INDICES: 3 
+2 
+5 
+2 
+OK
+idx: 216
+INDICES: 4 
+0 
+0 
+0 
+OK
+idx: 217
+INDICES: 4 
+0 
+0 
+1 
+OK
+idx: 218
+INDICES: 4 
+0 
+0 
+2 
+OK
+idx: 219
+INDICES: 4 
+0 
+1 
+0 
+OK
+idx: 220
+INDICES: 4 
+0 
+1 
+1 
+OK
+idx: 221
+INDICES: 4 
+0 
+1 
+2 
+OK
+idx: 222
+INDICES: 4 
+0 
+2 
+0 
+OK
+idx: 223
+INDICES: 4 
+0 
+2 
+1 
+OK
+idx: 224
+INDICES: 4 
+0 
+2 
+2 
+OK
+idx: 225
+INDICES: 4 
+0 
+3 
+0 
+OK
+idx: 226
+INDICES: 4 
+0 
+3 
+1 
+OK
+idx: 227
+INDICES: 4 
+0 
+3 
+2 
+OK
+idx: 228
+INDICES: 4 
+0 
+4 
+0 
+OK
+idx: 229
+INDICES: 4 
+0 
+4 
+1 
+OK
+idx: 230
+INDICES: 4 
+0 
+4 
+2 
+OK
+idx: 231
+INDICES: 4 
+0 
+5 
+0 
+OK
+idx: 232
+INDICES: 4 
+0 
+5 
+1 
+OK
+idx: 233
+INDICES: 4 
+0 
+5 
+2 
+OK
+idx: 234
+INDICES: 4 
+1 
+0 
+0 
+OK
+idx: 235
+INDICES: 4 
+1 
+0 
+1 
+OK
+idx: 236
+INDICES: 4 
+1 
+0 
+2 
+OK
+idx: 237
+INDICES: 4 
+1 
+1 
+0 
+OK
+idx: 238
+INDICES: 4 
+1 
+1 
+1 
+OK
+idx: 239
+INDICES: 4 
+1 
+1 
+2 
+OK
+idx: 240
+INDICES: 4 
+1 
+2 
+0 
+OK
+idx: 241
+INDICES: 4 
+1 
+2 
+1 
+OK
+idx: 242
+INDICES: 4 
+1 
+2 
+2 
+OK
+idx: 243
+INDICES: 4 
+1 
+3 
+0 
+OK
+idx: 244
+INDICES: 4 
+1 
+3 
+1 
+OK
+idx: 245
+INDICES: 4 
+1 
+3 
+2 
+OK
+idx: 246
+INDICES: 4 
+1 
+4 
+0 
+OK
+idx: 247
+INDICES: 4 
+1 
+4 
+1 
+OK
+idx: 248
+INDICES: 4 
+1 
+4 
+2 
+OK
+idx: 249
+INDICES: 4 
+1 
+5 
+0 
+OK
+idx: 250
+INDICES: 4 
+1 
+5 
+1 
+OK
+idx: 251
+INDICES: 4 
+1 
+5 
+2 
+OK
+idx: 252
+INDICES: 4 
+2 
+0 
+0 
+OK
+idx: 253
+INDICES: 4 
+2 
+0 
+1 
+OK
+idx: 254
+INDICES: 4 
+2 
+0 
+2 
+OK
+idx: 255
+INDICES: 4 
+2 
+1 
+0 
+OK
+idx: 256
+INDICES: 4 
+2 
+1 
+1 
+OK
+idx: 257
+INDICES: 4 
+2 
+1 
+2 
+OK
+idx: 258
+INDICES: 4 
+2 
+2 
+0 
+OK
+idx: 259
+INDICES: 4 
+2 
+2 
+1 
+OK
+idx: 260
+INDICES: 4 
+2 
+2 
+2 
+OK
+idx: 261
+INDICES: 4 
+2 
+3 
+0 
+OK
+idx: 262
+INDICES: 4 
+2 
+3 
+1 
+OK
+idx: 263
+INDICES: 4 
+2 
+3 
+2 
+OK
+idx: 264
+INDICES: 4 
+2 
+4 
+0 
+OK
+idx: 265
+INDICES: 4 
+2 
+4 
+1 
+OK
+idx: 266
+INDICES: 4 
+2 
+4 
+2 
+OK
+idx: 267
+INDICES: 4 
+2 
+5 
+0 
+OK
+idx: 268
+INDICES: 4 
+2 
+5 
+1 
+OK
+idx: 269
+INDICES: 4 
+2 
+5 
+2 
+OK
+idx: 270
+INDICES: 5 
+0 
+0 
+0 
+OK
+idx: 271
+INDICES: 5 
+0 
+0 
+1 
+OK
+idx: 272
+INDICES: 5 
+0 
+0 
+2 
+OK
+idx: 273
+INDICES: 5 
+0 
+1 
+0 
+OK
+idx: 274
+INDICES: 5 
+0 
+1 
+1 
+OK
+idx: 275
+INDICES: 5 
+0 
+1 
+2 
+OK
+idx: 276
+INDICES: 5 
+0 
+2 
+0 
+OK
+idx: 277
+INDICES: 5 
+0 
+2 
+1 
+OK
+idx: 278
+INDICES: 5 
+0 
+2 
+2 
+OK
+idx: 279
+INDICES: 5 
+0 
+3 
+0 
+OK
+idx: 280
+INDICES: 5 
+0 
+3 
+1 
+OK
+idx: 281
+INDICES: 5 
+0 
+3 
+2 
+OK
+idx: 282
+INDICES: 5 
+0 
+4 
+0 
+OK
+idx: 283
+INDICES: 5 
+0 
+4 
+1 
+OK
+idx: 284
+INDICES: 5 
+0 
+4 
+2 
+OK
+idx: 285
+INDICES: 5 
+0 
+5 
+0 
+OK
+idx: 286
+INDICES: 5 
+0 
+5 
+1 
+OK
+idx: 287
+INDICES: 5 
+0 
+5 
+2 
+OK
+idx: 288
+INDICES: 5 
+1 
+0 
+0 
+OK
+idx: 289
+INDICES: 5 
+1 
+0 
+1 
+OK
+idx: 290
+INDICES: 5 
+1 
+0 
+2 
+OK
+idx: 291
+INDICES: 5 
+1 
+1 
+0 
+OK
+idx: 292
+INDICES: 5 
+1 
+1 
+1 
+OK
+idx: 293
+INDICES: 5 
+1 
+1 
+2 
+OK
+idx: 294
+INDICES: 5 
+1 
+2 
+0 
+OK
+idx: 295
+INDICES: 5 
+1 
+2 
+1 
+OK
+idx: 296
+INDICES: 5 
+1 
+2 
+2 
+OK
+idx: 297
+INDICES: 5 
+1 
+3 
+0 
+OK
+idx: 298
+INDICES: 5 
+1 
+3 
+1 
+OK
+idx: 299
+INDICES: 5 
+1 
+3 
+2 
+OK
+idx: 300
+INDICES: 5 
+1 
+4 
+0 
+OK
+idx: 301
+INDICES: 5 
+1 
+4 
+1 
+OK
+idx: 302
+INDICES: 5 
+1 
+4 
+2 
+OK
+idx: 303
+INDICES: 5 
+1 
+5 
+0 
+OK
+idx: 304
+INDICES: 5 
+1 
+5 
+1 
+OK
+idx: 305
+INDICES: 5 
+1 
+5 
+2 
+OK
+idx: 306
+INDICES: 5 
+2 
+0 
+0 
+OK
+idx: 307
+INDICES: 5 
+2 
+0 
+1 
+OK
+idx: 308
+INDICES: 5 
+2 
+0 
+2 
+OK
+idx: 309
+INDICES: 5 
+2 
+1 
+0 
+OK
+idx: 310
+INDICES: 5 
+2 
+1 
+1 
+OK
+idx: 311
+INDICES: 5 
+2 
+1 
+2 
+OK
+idx: 312
+INDICES: 5 
+2 
+2 
+0 
+OK
+idx: 313
+INDICES: 5 
+2 
+2 
+1 
+OK
+idx: 314
+INDICES: 5 
+2 
+2 
+2 
+OK
+idx: 315
+INDICES: 5 
+2 
+3 
+0 
+OK
+idx: 316
+INDICES: 5 
+2 
+3 
+1 
+OK
+idx: 317
+INDICES: 5 
+2 
+3 
+2 
+OK
+idx: 318
+INDICES: 5 
+2 
+4 
+0 
+OK
+idx: 319
+INDICES: 5 
+2 
+4 
+1 
+OK
+idx: 320
+INDICES: 5 
+2 
+4 
+2 
+OK
+idx: 321
+INDICES: 5 
+2 
+5 
+0 
+OK
+idx: 322
+INDICES: 5 
+2 
+5 
+1 
+OK
+idx: 323
+INDICES: 5 
+2 
+5 
+2 
+OK
+252
+258
+264
+270
+276
+282
+288
+294
+300
+306
+312
+318
+324
+330
+336
+342
+348
+354
+684
+706
+728
+750
+772
+794
+816
+838
+860
+882
+904
+926
+948
+970
+992
+1014
+1036
+1058
+1116
+1154
+1192
+1230
+1268
+1306
+1344
+1382
+1420
+1458
+1496
+1534
+1572
+1610
+1648
+1686
+1724
+1762
+1548
+1602
+1656
+1710
+1764
+1818
+1872
+1926
+1980
+2034
+2088
+2142
+2196
+2250
+2304
+2358
+2412
+2466
+1980
+2050
+2120
+2190
+2260
+2330
+2400
+2470
+2540
+2610
+2680
+2750
+2820
+2890
+2960
+3030
+3100
+3170
+2412
+2498
+2584
+2670
+2756
+2842
+2928
+3014
+3100
+3186
+3272
+3358
+3444
+3530
+3616
+3702
+3788
+3874
+2844
+2946
+3048
+3150
+3252
+3354
+3456
+3558
+3660
+3762
+3864
+3966
+4068
+4170
+4272
+4374
+4476
+4578
+3276
+3394
+3512
+3630
+3748
+3866
+3984
+4102
+4220
+4338
+4456
+4574
+4692
+4810
+4928
+5046
+5164
+5282
+3708
+3842
+3976
+4110
+4244
+4378
+4512
+4646
+4780
+4914
+5048
+5182
+5316
+5450
+5584
+5718
+5852
+5986
+4140
+4290
+4440
+4590
+4740
+4890
+5040
+5190
+5340
+5490
+5640
+5790
+5940
+6090
+6240
+6390
+6540
+6690
+4572
+4738
+4904
+5070
+5236
+5402
+5568
+5734
+5900
+6066
+6232
+6398
+6564
+6730
+6896
+7062
+7228
+7394
+5004
+5186
+5368
+5550
+5732
+5914
+6096
+6278
+6460
+6642
+6824
+7006
+7188
+7370
+7552
+7734
+7916
+8098
+5436
+5634
+5832
+6030
+6228
+6426
+6624
+6822
+7020
+7218
+7416
+7614
+7812
+8010
+8208
+8406
+8604
+8802
+5868
+6082
+6296
+6510
+6724
+6938
+7152
+7366
+7580
+7794
+8008
+8222
+8436
+8650
+8864
+9078
+9292
+9506
+6300
+6530
+6760
+6990
+7220
+7450
+7680
+7910
+8140
+8370
+8600
+8830
+9060
+9290
+9520
+9750
+9980
+10210
+6732
+6978
+7224
+7470
+7716
+7962
+8208
+8454
+8700
+8946
+9192
+9438
+9684
+9930
+10176
+10422
+10668
+10914
+7164
+7426
+7688
+7950
+8212
+8474
+8736
+8998
+9260
+9522
+9784
+10046
+10308
+10570
+10832
+11094
+11356
+11618
+7596
+7874
+8152
+8430
+8708
+8986
+9264
+9542
+9820
+10098
+10376
+10654
+10932
+11210
+11488
+11766
+12044
+12322
