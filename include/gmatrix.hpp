@@ -76,7 +76,10 @@ private:
     T* data;
     size_t size;
 public:
-    gmatrix(std::initializer_list<size_t> shape) {
+    gmatrix(std::initializer_list<size_t> shape) 
+        : gmatrix(std::vector<size_t>(shape)) { }
+
+    gmatrix(std::vector<size_t> shape) {
         if (shape.size() == 0) throw std::invalid_argument("Cannot create matrix from empty shape");
         size_t size = 1;
         for (auto s : shape) {
@@ -109,6 +112,26 @@ public:
             this->_shape.push_back(sh);
         }
     }
+
+    gmatrix operator+ (gmatrix<T>& other) {
+        if (!same_shape(*this, other)) throw std::invalid_argument("Cannot add matrices with different shapes.");
+        gmatrix<T> result(this->_shape);
+        for (size_t i = 0; i < this->size; i++) {
+            result.data[i] = this->data[i] + other.data[i];
+        }
+        return result;
+    }
+
+    // Static methods
+    bool same_shape(gmatrix<T>& m1, gmatrix<T>& m2) {
+        if (m1.shape().size() != m2.shape().size()) return false;
+        for (size_t i = 0; i < m1.shape().size(); i++) {
+            if (m1.shape()[i] != m2.shape()[i]) return false;
+        }
+        return true;
+    }
+
+    // Indexer
 
     indexer<T> operator[] (size_t idx) {
         return indexer<T>(&this->_shape, &this->data, idx);
