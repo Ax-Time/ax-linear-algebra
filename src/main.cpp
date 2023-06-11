@@ -5,13 +5,17 @@
 #include <ctime>
 
 #include "gmatrix.hpp"
-#include "fmatrix.hpp"
 #include "factory.hpp"
 
 int main() {
-    auto m = ax::factory::randn({1, 1, 1}, 0, 1);
+    ax::gmatrix<float> M({2, 2}), N({2, 2});
 
-    std::cout << m << std::endl;
+    M.get({0, 0}) = 1;
+    N.get({0, 0}) = 2;
+
+    auto C = M + N;
+
+    std::cout << C << std::endl;
 
     return 0;
 }

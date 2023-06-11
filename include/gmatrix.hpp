@@ -1,289 +1,147 @@
 #ifndef AX_GMATRIX_HPP
 #define AX_GMATRIX_HPP
 
-#include <cstddef>
 #include <initializer_list>
 #include <stdexcept>
 #include <vector>
-#include <iterator>
-#include <iostream>
+#include <functional>
+#include <numeric>
+
+#include "indexers.hpp"
 
 namespace ax {
 
 template <typename T>
-class indexer {
+class gmatrix {
 private:
-    std::vector<size_t>* shape;
-    std::vector<size_t> indices;
-    T** data;
+    std::vector<T> data;
+    std::vector<std::size_t> shape;
+    std::size_t idx_mult;
+
+    gmatrix (std::vector<std::size_t>::iterator shape_begin, std::vector<std::size_t>::iterator shape_end) 
+        : data(std::accumulate(shape_begin, shape_end, 1, std::multiplies<std::size_t>())), 
+          shape(shape_begin, shape_end),
+          idx_mult(std::accumulate(shape_begin + 1, shape_end, 1, std::multiplies<std::size_t>()))
+        { }
+
+    gmatrix (std::vector<std::size_t> shape) 
+        : gmatrix(shape.begin(), shape.end()) { }
+
+    gmatrix (
+        std::vector<std::size_t>::iterator shape_begin, 
+        std::vector<std::size_t>::iterator shape_end, 
+        typename std::vector<T>::iterator data_begin,
+        typename std::vector<T>::iterator data_end
+    ) 
+        : data(data_begin, data_end), 
+          shape(shape_begin, shape_end),
+          idx_mult(std::accumulate(shape_begin + 1, shape_end, 1, std::multiplies<std::size_t>()))
+        { }
+
 public:
-    indexer(std::vector<size_t>* shape, T** data) {
-        this->shape = shape;
-        this->data = data;
-    }
-    indexer(std::vector<size_t>* shape, T** data, size_t idx) {
-        if (idx >= (*shape)[0]) {
-            throw std::out_of_range("Index out of boundaries.");
-        }
-        this->shape = shape;
-        this->data = data;
-        this->indices.push_back(idx);
+    gmatrix (std::initializer_list<std::size_t> shape) 
+        : gmatrix(std::vector<std::size_t>(shape)) { }
+
+    // Slice the tensor, returns a new tensor
+    gmatrix<T> operator[] (std::size_t idx) {
+        if (idx >= shape[0])
+            throw std::out_of_range("Index out of boundaries");
+        std::vector<std::size_t> result_shape = 
+            shape.size() == 1 ? 
+            std::vector<std::size_t>({1}) : 
+            std::vector<std::size_t>(shape.begin() + 1, shape.end());
+        return gmatrix<T>(
+            result_shape.begin(), 
+            result_shape.end(), 
+            data.begin() + idx * idx_mult, 
+            data.end()
+        );
     }
 
-    indexer operator[] (size_t idx) {
-        if (indices.size() == shape->size()) {
-            throw std::runtime_error("Trying to index a scalar.");
-        }
-        if (idx >= (*shape)[indices.size()]) {
-            throw std::out_of_range("Index out of boundaries.");
-        }
-        this->indices.push_back(idx);
-        return *this;
+    gmatrix<T> operator[] (range r) {
+        std::size_t start = r.start, end = r.end, step = r.step;
+        if (start >= shape[0] || end > shape[0])
+            throw std::out_of_range("Index out of boundaries");
+        std::size_t n_slices = (end - start + 1) / step;
+        
+        // WIP
     }
 
-    T& flat(size_t idx) {
-        size_t size = 1;
-        for (auto s : *shape) {
-            size *= s;
-        }
-        if (idx >= size) {
-            throw std::out_of_range("Index out of boundaries.");
-        }
-        return (*this->data)[idx];
+
+
+    std::size_t size() const {
+        return data.size();
     }
 
-    void clear() {
-        this->indices.clear();
-    }
-
-    void erase_last() {
-        this->indices.pop_back();
+    std::vector<std::size_t> get_shape() const {
+        return shape;
     }
 
     operator T&() const {
-        if (indices.size() != this->shape->size()) {
-            std::string err;
-            err += "Matrix requires ";
-            err += std::to_string(this->shape->size());
-            err += " indices, ";
-            err += std::to_string(indices.size());
-            err += " provided.";
-            throw std::runtime_error(err);
-        } 
-
-        size_t idx = 0;
-        for (size_t i = 0; i < indices.size(); i++) {
-            size_t curr_idx = indices[i];
-            size_t multiplier = 1;
-            for (size_t j = i + 1; j < indices.size(); j++) {
-                multiplier *= (*this->shape)[j];
-            }
-            idx += curr_idx * multiplier;
-        }
-
-        return (*this->data)[idx];
-    } 
-
-    void operator = (T value) {
-        (T&) (*this) = value;
+        if (shape.size() != 1 || shape[0] != 1)
+            throw std::runtime_error("Cannot cast matrix to T.");
+        return data[0];
     }
-
-    std::string to_string() {
-        if (indices.size() == shape->size()) {
-            return std::to_string((T&) (*this)) + (*indices.rbegin() != (*shape)[indices.size() - 1] - 1 ? ", " : "");
-        } else {
-            std::string result = "[ ";
-            for (size_t i = 0; i < (*shape)[indices.size()]; i++) {
-                result += (*this)[i].to_string();
-                erase_last();
-            }
-            result += " ]\n";
-            return result;
-        }
-    }
-};
-
-
-
-/**
- * Generalized matrix implementation (can be used for vectors, matrices and tensors).
-*/
-template <typename T>
-class gmatrix {
-protected:
-    std::vector<size_t> _shape;
-    size_t size;
-public:
-    T* data;
-    gmatrix(std::initializer_list<size_t> shape) 
-        : gmatrix(std::vector<size_t>(shape)) { }
-
-    gmatrix(std::vector<size_t> shape) {
-        if (shape.size() == 0) throw std::invalid_argument("Cannot create matrix from empty shape");
-        size_t size = 1;
-        for (auto s : shape) {
-            if (s == 0) throw std::invalid_argument("Cannot create zero-shaped matrix.");
-            this->_shape.push_back(s);
-            size *= s;
-        }
-        data = new T[size];
-        this->size = size;
-    }
-
-    gmatrix(size_t m, size_t n) 
-        : gmatrix(std::vector<size_t>({m, n})) {}
-
-    ~gmatrix() {
-        delete[] data;
-    }
-
-    std::vector<size_t> shape() const {
-        return this->_shape;
-    }
-
-    size_t get_size() const {
-        return this->size;
-    }
-    
-    /**
-     * Matrix should be immutable, so we don't allow reshaping in place for now.
-    */
-    // void reshape(std::initializer_list<size_t> shape) {
-    //     if (shape.size() == 0) throw std::invalid_argument("Cannot reshape matrix to empty shape");
-    //     size_t after_size = 1;
-    //     for (auto sh : shape) {
-    //         if (sh == 0) throw std::invalid_argument("Cannot reshape matrix to zero shape.");
-    //         after_size *= sh;
-    //     }
-    //     if (after_size != this->size) throw std::invalid_argument("Cannot reshape matrix to different size.");
-    //     this->_shape.clear();
-    //     for (auto sh : shape) {
-    //         this->_shape.push_back(sh);
-    //     }
-    // }
 
     /**
-     * Sums two tensors of the same shape
+     * Returns a reference to the indexed element
     */
-    gmatrix operator+ (gmatrix<T>& other) {
-        if (!same_shape(*this, other)) throw std::invalid_argument("Cannot add matrices with different shapes.");
-        gmatrix<T> result(this->_shape);
-        for (size_t i = 0; i < this->size; i++) {
-            result.data[i] = this->data[i] + other.data[i];
+    T& get(std::initializer_list<std::size_t> indices) {
+        return get(std::vector<std::size_t>(indices));
+    }
+
+    T& get(std::vector<std::size_t> indices) {
+        if (indices.size() != shape.size()) 
+            throw std::invalid_argument("Expected " + std::to_string(shape.size()) + " indices, got " + std::to_string(indices.size()));
+        std::size_t idx = 0;
+        std::size_t mult = 1;
+        for (
+            auto indices_it = indices.rbegin(), shape_it = shape.rbegin(); 
+            indices_it != indices.rend(); indices_it++, shape_it++
+        ) {
+            if (*indices_it >= *shape_it)
+                throw std::out_of_range("Index out of boundaries.");
+            idx += mult * (*indices_it);
+            mult *= shape_it != shape.rbegin() ? *(shape_it - 1) : 1;
         }
+        return data[idx];
+    }
+
+    gmatrix<T> operator+(const gmatrix<T>& other) const {
+        if (shape != other.shape)
+            throw std::invalid_argument("Cannot add matrices of different shapes.");
+        gmatrix<T> result(shape);
+        for (std::size_t i = 0; i < size(); i++)
+            result.data[i] = data[i] + other.data[i];
         return result;
     }
 
-    /**
-     * Computes the tensor product of two tensors:
-     * A shape = (a1, a2, ..., an)
-     * B shape = (b1, b2, ..., bm)
-     * It can be computed only if an == b1
-     * A x B shape = (a1, a2, ..., a(n-1), b2, ..., bm)
-    */
-    gmatrix operator* (gmatrix<T>& other) {
-        if (!can_perform_product(*this, other)) throw std::invalid_argument("Cannot multiply uncompatible matrices.");
-        std::vector<size_t> res_shape;
-        res_shape.insert(res_shape.end(), _shape.begin(), _shape.end() - 1);
-        res_shape.insert(res_shape.end(), other._shape.begin() + 1, other._shape.end());
-        gmatrix<T> result(res_shape);
-        memset(result.data, 0, result.size);
-        std::vector<size_t> multipliers;
-        multipliers.push_back(1);
-        for (int i = result._shape.size() - 2; i >= 0; i--) {
-            multipliers.insert(multipliers.begin(), *multipliers.begin() * result._shape[i + 1]);
-        }
-
-        // Start operation
-        for (size_t idx = 0; idx < result.size; idx++) {
-            std::vector<size_t> indices;
-
-            size_t temp = idx;
-            for (size_t mul : multipliers) {
-                indices.push_back(temp / mul);
-                temp = temp % mul;
-            }
-            
-            indexer<T> result_indexer(&result._shape, &result.data);
-            indexer<T> left_indexer(&this->_shape, &this->data);
-
-            
-            // Index the result matrix
-            for (auto i : indices) {
-                result_indexer = result_indexer[i];
-            }
-
-            // Index the left matrix
-            for (size_t i = 0; i < this->_shape.size() - 1; i++) {
-                left_indexer = left_indexer[indices[i]];
-            }
-
-            indexer<T> right_indexer(&other._shape, &other.data);
-            for (size_t k = 0; k < other._shape[0]; k++) {
-                auto r_indexer = right_indexer[k];
-
-                // Index the right matrix
-                for (size_t i = result._shape.size() - other._shape.size() + 1; i < indices.size(); i++) {
-                    r_indexer = r_indexer[indices[i]];
-                }
-
-                T& value = result_indexer;
-                T& left = left_indexer[k];
-                T& right = r_indexer;
-                value += left * right;
-
-                // Clean up
-                right_indexer.clear();
-                left_indexer.erase_last();
-            }
-        }
+    gmatrix<T> operator-(const gmatrix<T>& other) const {
+        if (shape != other.shape)
+            throw std::invalid_argument("Cannot subtract matrices of different shapes.");
+        gmatrix<T> result(shape);
+        for (std::size_t i = 0; i < size(); i++)
+            result.data[i] = data[i] - other.data[i];
         return result;
     }
 
-
-    // Static methods
-    static bool can_perform_product(gmatrix<T>& m1, gmatrix<T>& m2) {
-        return m1._shape[m1._shape.size() - 1] == m2._shape[0];
-    }
-
-    static bool same_shape(gmatrix<T>& m1, gmatrix<T>& m2) {
-        if (m1.shape().size() != m2.shape().size()) return false;
-        for (size_t i = 0; i < m1.shape().size(); i++) {
-            if (m1.shape()[i] != m2.shape()[i]) return false;
+    friend std::ostream& operator<<(std::ostream& os, gmatrix<T>& matrix) {
+        os << "[";
+        if (matrix.shape.size() == 1 && matrix.shape[0] == 1)
+            os << matrix.data[0] << ", ";
+        else if (matrix.shape.size() == 1) {
+            for (std::size_t i = 0; i < matrix.shape[0]; i++)
+                os << matrix.data[i] << ((i == (matrix.shape[0] - 1)) ? "" : ", ");
         }
-        return true;
+        else
+            for (std::size_t i = 0; i < matrix.shape[0]; i++) {
+                gmatrix<T> slice = matrix[i];
+                os << slice << ((i == (matrix.shape[0] - 1)) ? "" : ", ");
+            }
+        os << "]";
+        return os;
     }
-
-    // Indexer
-    indexer<T> operator[] (size_t idx) {
-        return indexer<T>(&this->_shape, &this->data, idx);
-    }
-
-    indexer<T> get_indexer () {
-        return indexer<T>(&this->_shape, &this->data);
-    }
-
-    friend class indexer<T>;
 };
-
-// Operator overloading
-template <typename T>
-std::ostream &operator<<(std::ostream &os, gmatrix<T> &m) { 
-    auto shape = m.shape();
-    os << "[ ";
-    for (size_t i = 0; i < shape[0]; i++) {
-        os << m[i].to_string() << (i != shape[0] - 1 ? ", " : "");
-    }
-    os << " ]";
-    return os;
-    // os << "[";
-    // for (size_t i = 0; i < m.size; i++) {
-    //     os << m.data[i];
-    //     if (i != m.size - 1) os << ", ";
-    // }
-    // os << "]";
-    return os;
-}
 
 }
 
